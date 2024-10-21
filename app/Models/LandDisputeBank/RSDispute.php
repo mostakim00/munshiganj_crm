@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models\LandDisputeBank;
+
+use App\Models\LandInformationBank\RSDagAndKhatiyan\RSDagInfo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class RSDispute extends Model
+{
+    use HasFactory;
+    protected $guarded = [];
+
+    public function rsInfo()
+    {
+        return $this->hasOne(RSDagInfo::class,'id','rs_id');
+    }
+
+}
